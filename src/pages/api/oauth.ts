@@ -47,7 +47,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     return res.redirect(OAUTH_URI);
   }
 
-  const me: DiscordUser | { unauthorized: true } = await fetch("http://discord.com/api/users/@me", {
+  const me: any = await fetch("http://discord.com/api/users/@me", {
     headers: { Authorization: `${token_type} ${access_token}` },
   }).then((res) => res.json());
 
