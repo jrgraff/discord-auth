@@ -37,7 +37,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     scope,
   }).toString();
 
-  const { access_token = null, token_type = "Bearer" } = await fetch("https://discord.com/api/oauth2/token", {
+  const { access_token = null, token_type = "Bearer" }:any = await fetch("https://discord.com/api/oauth2/token", {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     method: "POST",
     body,
