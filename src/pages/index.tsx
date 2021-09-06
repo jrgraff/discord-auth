@@ -8,9 +8,17 @@ import {
   Image,
   Icon,
 } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import { FaDiscord } from 'react-icons/fa'
 
 export default function HomePage() {
+  const router = useRouter()
+
+  async function handleLogin() {
+    router.push('/dashboard')
+    return;
+  }
+
   return (
     <Container maxW={'7xl'}>
       <Stack
@@ -49,6 +57,7 @@ export default function HomePage() {
               fontWeight={'normal'}
               px={6}
               colorScheme={'purple'}
+              onClick={handleLogin}
             >
               <Icon mr={2} as={FaDiscord} />
               Get started with discord
